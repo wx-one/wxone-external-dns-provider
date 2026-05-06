@@ -27,7 +27,7 @@ spec:
             - --txt-owner-id=wx1
         - name: wx1-webhook
           image: wxone/external-dns-webhook-wx1:dev
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           env:
             - name: WX1_HOST
               value: https://cmd.wx1.eu/api
