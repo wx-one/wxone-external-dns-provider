@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"log"
 	"net/http"
 	"sort"
 	"strings"
@@ -395,5 +396,6 @@ func writeJSON(w http.ResponseWriter, status int, v any) {
 }
 
 func writeError(w http.ResponseWriter, status int, err error) {
+	log.Printf("webhook error: status=%d error=%q", status, err)
 	writeJSON(w, status, map[string]string{"error": err.Error()})
 }
